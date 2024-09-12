@@ -5,34 +5,37 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>HamburgerList</title>
+<title>햄버거 가게</title>
 </head>
 <body>
-<h1>BurgerList</h1>
-<table border="2">
+<h1>햄버거 가게</h1>
+<h2>햄버거 조회하기</h2>
+<table border="1">
 	<thead>
 	<tr>
-	<th>Name</th>
-	<th>Price</th>
-	<th>Description</th>
+	<th>ID</th>
+	<th>햄버거이름</th>
+	<th>햄버거가격</th>
+	<th>햄버거설명</th>
 	</tr>
 	</thead>
 	<tbody>
-	<c:forEach var="burger" items="${burger}">
+	<c:forEach var="hamburger" items="${ham}">
 	<tr>
-		<td>${burger.name }</td>
-		<td>${burger.price }</td>
-		<td>${burger.description}</td>
+		<td>${burger.id }</td>
+		<td>${burger.hname }</td>
+		<td>${burger.hprice }</td>
+		<td>${burger.hdescription}</td>
 	</tr>
 	</c:forEach>
 	</tbody>
 	</table>
-	<h2>Add burger</h2>
-	<form action="/addBurger" method="post">
-		이름 : <input type="text" name="name"/>
-		가격 : <input type="text" name="price"/>
-		내용 : <input type="text" name="description"/>
-		추가 : <input type="submit" value="saveBurger"/>	
+	<h2>햄버거 저장하기</h2>
+	<form action="/api/add" method="post">
+		햄버거이름 : <input type="text" name="hname"/>
+		햄버거가격 : <input type="number" name="hprice"/>
+		햄버거설명 : <input type="text" name="hdescription"/>
+		저장하기 : <input type="submit" value="햄버거 저장 버튼"/>	
 	</form>
 </body>
 </html>
